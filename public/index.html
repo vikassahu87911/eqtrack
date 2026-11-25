@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7f5">
+    <title>Equity Trend | India</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Equity Trend home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 17.5 9.2 12l3.5 3.2L20 7.5M14.8 7.5H20v5.2"/></svg>
+        </span>
+        <span>equity<span class="brand-light">trend</span><span class="brand-country"> INDIA</span></span>
+      </a>
+      <span class="market-status"><span class="status-dot"></span> Indian equities</span>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p class="eyebrow">MARKET PULSE <span></span> NIFTY &amp; BSE LISTED</p>
+        <h1>Find the direction.<br><span>Not a prediction.</span></h1>
+        <p class="intro-copy">A simple read on recent price momentum for Indian equities, grounded in daily closing prices.</p>
+      </section>
+
+      <section class="workspace" aria-label="Equity trend lookup">
+        <div class="lookup-card">
+          <div class="lookup-heading">
+            <div>
+              <p class="section-kicker">STOCK LOOKUP</p>
+              <h2>Which stock are you watching?</h2>
+            </div>
+            <span class="exchange-badge">NSE / BSE</span>
+          </div>
+          <label for="stock-search">Company name or ticker</label>
+          <div class="search-wrap">
+            <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg>
+            <input id="stock-search" type="search" placeholder="Try Reliance, Infosys, HDFCBANK…" autocomplete="off" aria-autocomplete="list" aria-controls="stock-options">
+            <span class="search-shortcut">⌕</span>
+            <div id="stock-options" class="suggestions" role="listbox" hidden></div>
+          </div>
+          <p class="lookup-hint">Search the NSE and BSE stock universe, or enter a Yahoo Finance symbol such as <code>RELIANCE.NS</code>.</p>
+          <p id="catalog-status" class="catalog-status" aria-live="polite">Loading the latest exchange symbol lists…</p>
+          <form id="custom-symbol-form" class="custom-symbol-form">
+            <label for="custom-symbol">Or enter a ticker</label>
+            <div class="custom-row">
+              <input id="custom-symbol" type="text" placeholder="e.g. TCS.NS" maxlength="30" autocomplete="off">
+              <button type="submit" class="text-button">Check trend <span aria-hidden="true">→</span></button>
+            </div>
+          </form>
+        </div>
+
+        <div id="result-area" class="result-area" aria-live="polite">
+          <div class="empty-state">
+            <div class="empty-icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40"><path d="M6 29V11m0 18h28M11 24l7-7 5 4 9-11"/><circle cx="32" cy="10" r="2"/></svg>
+            </div>
+            <p class="empty-title">Your next insight starts here</p>
+            <p class="empty-copy">Choose an equity to see its recent trend and the numbers behind it.</p>
+          </div>
+        </div>
+
+        <aside class="method-note">
+          <div class="method-icon" aria-hidden="true">i</div>
+          <p><strong>How to read this</strong>Trend labels use the latest close and 20- and 50-day simple moving averages. They describe historical price action only—not a forecast or investment recommendation.</p>
+          <a href="#methodology">Methodology <span aria-hidden="true">↗</span></a>
+        </aside>
+      </section>
+
+      <section id="methodology" class="methodology">
+        <p class="section-kicker">THE SIGNAL, SIMPLIFIED</p>
+        <h2>Three pieces. One quick read.</h2>
+        <div class="method-grid">
+          <article>
+            <span class="method-number">01</span>
+            <h3>Recent price</h3>
+            <p>The latest available daily closing price from the data provider.</p>
+          </article>
+          <article>
+            <span class="method-number">02</span>
+            <h3>20 &amp; 50-day averages</h3>
+            <p>Short- and medium-term averages smooth out day-to-day movement.</p>
+          </article>
+          <article>
+            <span class="method-number">03</span>
+            <h3>Trend alignment</h3>
+            <p>Bullish or bearish only when price and both averages align. Mixed signals stay neutral.</p>
+          </article>
+        </div>
+        <p class="disclaimer">Market data is provided by Yahoo Finance via its chart endpoint. Data may be delayed, incomplete, or unavailable. This tool is for educational purposes only and is not financial advice.</p>
+      </section>
+    </main>
+    <footer><span>EquityTrend <span class="footer-divider">/</span> India</span><span>Understand the trend. Make your own call.</span></footer>
+  </body>
+</html>
